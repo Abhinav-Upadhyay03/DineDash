@@ -49,13 +49,20 @@
 }
 .card-container{
     width: 20rem;
-    background-color: aliceblue;
+    background-color: #FFEFC8;
     padding: 8px;
     margin: 10px;
+    border-radius: 20px;
+}
+.card-container:hover{
+    cursor: pointer;
+    width: 20.5rem;
+    
 }
 .card-image{
     object-fit: cover;
     width: 100%;
+    border-radius:20px;
 
 }
 .body-cards{
@@ -89,9 +96,44 @@
     color: #B82132;
 }
 .cost{
-    background-color: black;
-    color: white;
     width: auto;
-    padding: 3 10;
+    font-weight:bold;
+}
+.card-last-line{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shimmer-card-container{
+    width: 20rem;
+    height: 30rem;
+    background-color: #F8FAFC;
+    padding: 8px;
+    margin: 10px;
     border-radius: 20px;
+}
+.shimmer-card-image{
+    width: full;
+    height: 60%;
+    background-color: #DDDDDD ;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.shimmer-card-text{
+    width: full;
+    height: 2rem;
+    background-color: #DDDDDD;
+    border-radius: 30px;
+    margin: 20px;
+
+}
+.shimmer-card-text-half{
+    width: 50%;
+    height: 2rem;
+    background-color: #DDDDDD;
+    border-radius: 30px;
+    margin: 20px;
+
 }

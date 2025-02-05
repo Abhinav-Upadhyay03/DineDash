@@ -19,9 +19,13 @@ const RestaurantCard = (props) => {
       <div className="card-details">
         <div className="name">{name}</div>
         <div className="areaName">{areaName}</div>
-        <div className="cost">{costForTwo}</div>
+        
         <div className="cuisines">{cuisines.join(", ")}</div>
+        <div className="card-last-line">
+          <div className="cost">{costForTwo}</div>
         <div className="time">{sla.slaString}</div>
+        </div>
+        
       </div>
     </div>
   );

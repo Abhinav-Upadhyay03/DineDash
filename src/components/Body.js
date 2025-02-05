@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 import { API_RESTAURANT } from '../utils/constants';
+import Shimmer from './Shimmer';
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
@@ -10,15 +11,15 @@ const Body = () => {
     const fetchData = async () => {
         const data = await fetch(API_RESTAURANT);
         const json = await data.json();
-        setRestaurantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);    
+        setRestaurantList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);    
     }
     useEffect(() => {
         fetchData();
     }, [])
     
 
-  return (
+  return (restaurantList.length === 0) ? <Shimmer /> : (
     <div className='body-container'>
       <div className='search-bar-container'>
         <input className='search-bar' type="text" placeholder='Search Restaurant' onChange={(e) => {
