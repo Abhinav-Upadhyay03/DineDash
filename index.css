@@ -260,4 +260,7 @@ a{
 .dish-add-btn:hover{
     box-shadow: 1px 1px #3E7B27;
 }
+.old-price{
+    text-decoration: line-through;
+}
 
