@@ -95,6 +95,7 @@ a{
     border-radius: 100px;
     padding: 3px 10px;
     position: absolute;
+    
 }
 .name{
     font-size: 1.5rem;
@@ -262,5 +263,21 @@ a{
 }
 .old-price{
     text-decoration: line-through;
+}
+.image-container {
+  position: relative;
+}
+
+.veg-label {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background-color: lightgreen;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
 }
 
