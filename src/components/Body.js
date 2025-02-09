@@ -8,7 +8,7 @@ import useOnlineStatus from '../utils/useOnlineStatus';
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
-    const RestaurantCardVeg = vegRestaurantCardRestaurantCard(RestaurantCard);
+    const RestaurantCardVeg = vegRestaurantCard(RestaurantCard);
 
     const fetchData = async () => {
         const data = await fetch(API_RESTAURANT);
@@ -24,7 +24,6 @@ const Body = () => {
     if(!onlineStatus){
       return (<h1>Looks like you're offline. <br /> Please check your internet connection.</h1>)
     }
-    console.log(filteredList);
     
     
 

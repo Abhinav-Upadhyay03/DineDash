@@ -4,6 +4,7 @@ import Error from "../pages/Error";
 import AppLayout from "../App";
 import Cart from "../pages/Cart";
 import Menu from "../pages/Menu";
+import Payment from "../pages/Payment";
 
 export const appRouter = createBrowserRouter([
   {
@@ -20,8 +21,12 @@ export const appRouter = createBrowserRouter([
         element: <Cart />
       },
       {
-        path: 'restaurant/:resId',
+        path: '/restaurant/:resId',
         element: <Menu />
+      },
+      {
+        path: '/payment-details',
+        element: <Payment />
       }
     ],
   },
