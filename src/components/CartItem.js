@@ -3,8 +3,6 @@ import { removeItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
 
 const CartItem = ({ item }) => {
-    console.log(item);
-    
   const { name, price, id, finalPrice, defaultPrice} = item?.card?.info;
   const dispatch = useDispatch();
   const handleRemoveClick = () => {

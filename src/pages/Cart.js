@@ -11,7 +11,7 @@ const Cart = () => {
   };
   return (
     <>
-      <button className="clear-cart-button" onClick={handleClearCart}>
+      <button className="clear-cart-button" onClick={() => handleClearCart()}>
         Clear Cart
       </button>
       <div className="cart-body">
@@ -24,7 +24,7 @@ const Cart = () => {
             ))}
           </div>
         )}{
-          cartItems.length !== 0 && <Link to={"/payment-details"}> <button className="proceed-to-checkout">
+          cartItems.length !== 0 && <Link to={"/payment-details"}> <button onClick={() => handleClearCart()} className="proceed-to-checkout">
         Proceed to Checkout
       </button>
       </Link>
