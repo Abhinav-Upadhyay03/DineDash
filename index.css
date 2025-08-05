@@ -275,7 +275,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-lg) var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1305,7 +1305,7 @@ a {
   .body-cards {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-md) var(--spacing-md);
   }
   
   .card-container {
@@ -1410,6 +1410,11 @@ a {
   
   .body-container {
     padding: var(--spacing-sm);
+  }
+  
+  .body-cards {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    gap: var(--spacing-sm);
   }
   
   .search-bar {
