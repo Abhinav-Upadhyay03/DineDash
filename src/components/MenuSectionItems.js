@@ -1,46 +1,70 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addItem } from "../utils/cartSlice";
-import { Slide, toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
 
 const MenuSectionItems = (props) => {
   const { item } = props;
-  const { name, price, finalPrice, defaultPrice } = item?.card?.info;
+  const { name, price, finalPrice, defaultPrice, id } = item?.card?.info;
   const dispatch = useDispatch();
-  const itemAddedToast = () => {
-    toast.success("Item added to cart", {
-      position: "bottom-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Slide,
-    });
-  };
+  const cartItems = useSelector((store) => store.cart.items);
+
+  // Check if item is in cart and get its quantity
+  const cartItem = cartItems.find(
+    (cartItem) => cartItem?.card?.info?.id === id
+  );
+  const quantity = cartItem?.quantity || 0;
+
   const handleAddItemClick = () => {
     dispatch(addItem(item));
-    itemAddedToast();
+  };
+
+  const handleRemoveItemClick = () => {
+    dispatch(removeItem(id));
   };
 
   return (
     <div className="dish-container">
       <div className="dish-details">
-        <p>{name}</p>
+        <p className="dish-name">{name}</p>
         {finalPrice ? (
-          <p>
+          <p className="dish-price">
             <span className="old-price">₹{price / 100}</span> ₹
             {finalPrice / 100}
           </p>
         ) : (
-          <p>₹{price / 100 || defaultPrice/100}</p>
+          <p className="dish-price">₹{price / 100 || defaultPrice / 100}</p>
         )}
       </div>
-      <button className="dish-add-btn" onClick={() => handleAddItemClick()}>
-        ADD
-      </button>
+
+      <div className="dish-actions">
+        {quantity > 0 ? (
+          <div className="quantity-controls-inline">
+            <button
+              className="quantity-btn-inline"
+              onClick={handleRemoveItemClick}
+              aria-label="Remove item"
+            >
+              <i className="ri-subtract-line"></i>
+            </button>
+            <span className="quantity-display-inline">{quantity}</span>
+            <button
+              className="quantity-btn-inline"
+              onClick={handleAddItemClick}
+              aria-label="Add item"
+            >
+              <i className="ri-add-line"></i>
+            </button>
+          </div>
+        ) : (
+          <button
+            className="dish-add-btn"
+            onClick={handleAddItemClick}
+            aria-label="Add to cart"
+          >
+            ADD
+          </button>
+        )}
+      </div>
     </div>
   );
 };

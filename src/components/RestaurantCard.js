@@ -1,4 +1,4 @@
-import { CDN_URL, LOGO_URL } from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -19,30 +19,28 @@ const RestaurantCard = (props) => {
       <div className="card-details">
         <div className="name">{name}</div>
         <div className="areaName">{areaName}</div>
-        
+
         <div className="cuisines">{cuisines.join(", ")}</div>
         <div className="card-last-line">
           <div className="cost">{costForTwo}</div>
-        <div className="time">{sla.slaString}</div>
+          <div className="time">{sla.slaString}</div>
         </div>
-        
       </div>
     </div>
   );
 };
 
 export const vegRestaurantCard = (RestaurantCard) => {
-  return(props) => {
-    return(
+  return (props) => {
+    return (
       <>
         <div className="image-container">
           <label className="veg-label">Veg</label>
         </div>
         <RestaurantCard {...props} />
-        </>
-      
-    )
-  }
-}
+      </>
+    );
+  };
+};
 
 export default RestaurantCard;

@@ -4,7 +4,6 @@ import { CDN_URL } from "../utils/constants";
 import MenuShimmer from "../components/MenuShimmer";
 import MenuSection from "../components/MenuSection";
 import useResMenu from "../utils/useResMenu";
-import { Slide, ToastContainer } from "react-toastify";
 
 const Menu = () => {
   const { resId } = useParams();
@@ -70,19 +69,6 @@ const Menu = () => {
           />
         ))}
       </div>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Slide}
-      />
     </div>
   );
 };

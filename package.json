@@ -1,7 +1,7 @@
 {
-  "name": "swiggy-clone",
+  "name": "DineDash",
   "version": "1.0.0",
-  "description": "Trying to create something like swiggy",
+  "description": "A food ordering app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
@@ -15,8 +15,7 @@
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router": "^7.1.5",
-    "react-router-dom": "^6.22.0",
-    "react-toastify": "^11.0.3"
+    "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
     "parcel": "^2.13.3",
